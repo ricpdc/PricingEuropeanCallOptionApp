@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Pricing Parameters</h3>
+    <form action="" method="post" novalidate>
+	{{ form.hidden_tag() }}
+	
+		<table>
+			<tr>
+				<td>{% if problemPlot %} 
+					<img src="{{problemPlot}}" /> 
+					{% endif %}
+				</td>
+				<td>
+					{% if objectivePlot %}
+					<img src="{{objectivePlot}}" />
+					{% endif %}
+				</td>
+			</tr>
+		</table>
+	
+		<p>
+            {{ form.strike_price.label }}<br>
+            {{ form.strike_price }}<br>
+            <b>SET:{{ form.strike_price.data }}</b><br>
+            {% for error in form.strike_price.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.c_approx.label }}<br>
+            {{ form.c_approx }}<br>
+            <b>SET:{{ form.c_approx.data }}</b><br>
+            {% for error in form.c_approx.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+       
+        <p>{{ form.submit() }}</p>
+        
+		{% if expected_value %}
+	        <div class="isa_info">
+			     <i class="fa fa-info-circle"></i>
+			     <b>{{expected_value}}</b>
+			</div>
+        {% endif %}
+        
+        {% if expected_delta %}
+	        <div class="isa_info">
+			     <i class="fa fa-info-circle"></i>
+			     <b>{{expected_delta}}</b>
+			</div>
+        {% endif %}
+        
+    </form>
+{% endblock %}
+
+
+

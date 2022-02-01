@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Evaluate Expected Payoff</h3>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        
+        <p>{{ form.submit() }}</p>
+        
+        {% if expected_value %}
+	        <div class="isa_info">
+			     <i class="fa fa-info-circle"></i>
+			     <b>{{expected_value}}</b>
+			</div>
+        {% endif %}
+        
+		{% if estimated_value %}
+	        <div class="isa_success">
+			     <i class="fa fa-check"></i>
+			     <b>{{estimated_value}}</b>
+			</div>
+        {% endif %}
+        
+        {% if confidence_interval %}
+	        <div class="isa_success">
+			     <i class="fa fa-check"></i>
+			     <b>{{confidence_interval}}</b>
+			</div>
+        {% endif %}
+        
+        <br/>
+       	<b>Quantum Circuit</b>
+        <table>
+        	<tr>
+        		<td>
+        		{% if circuit %} 
+		        	<img width="200px" src="{{circuit}}" /> 
+		        {% endif %}
+        		</td>
+        		<td style="vertical-align: top; padding-left: 80px; padding-top: 50px;">
+        			<div id="loading"></div>
+        		</td>
+        	</tr>
+        </table>
+        
+        
+    </form>
+{% endblock %}
+
+
+
