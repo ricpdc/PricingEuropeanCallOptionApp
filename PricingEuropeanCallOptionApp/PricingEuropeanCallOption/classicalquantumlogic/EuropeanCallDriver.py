@@ -1,4 +1,7 @@
-from qiskit.algorithms import IterativeAmplitudeEstimation, EstimationProblem
+from qiskit_algorithms import IterativeAmplitudeEstimation, EstimationProblem
+
+from qiskit_ibm_runtime import QiskitRuntimeService, Sampler
+
 
 from classicalquantumlogic.EuropeanCallQuantumRequest import EuropeanCallQuantumRequest
 from classicalquantumlogic.EuropeanCallEstimation import EuropeanCallEstimation
@@ -22,7 +25,7 @@ class EuropeanCallDriver:
             post_processing=self.QAEAlgorithm.getObjective().getLinearAmplitudeFunction().post_processing,
         )
         # construct amplitude estimation
-        self.iterativeAmplitudeEstimation = IterativeAmplitudeEstimation(self.quantumRequest.epsilon, alpha=self.quantumRequest.alpha, quantum_instance=self.quantumRequest.getQuantumInstance())
+        self.iterativeAmplitudeEstimation = IterativeAmplitudeEstimation(self.quantumRequest.epsilon, alpha=self.quantumRequest.alpha)
         
         self.result = self.iterativeAmplitudeEstimation.estimate(self.estimationProblem)
         
