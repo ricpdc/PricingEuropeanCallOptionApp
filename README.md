@@ -13,3 +13,15 @@ For avoidance of doubt, the Apache-2.0 license also applies to the project-speci
   (`19d71303165578444f36e3a9efb69d3db4c6a587`)
 
 Parts of the quantum option-pricing implementation were adapted from Qiskit Finance examples, including the "Pricing European Call Options" tutorial. Such third-party material remains subject to its original Apache License 2.0 terms and attribution.
+
+## Attribution
+
+When redistributing substantial portions of this project, please retain the following attribution:
+
+PricingEuropeanCallOptionApp
+Ricardo Pérez-Castillo and contributors
+University of Castilla-La Mancha
+
+This software was developed as an example of a hybrid classical-quantum software system associated with:
+
+R. Pérez-Castillo and M. Piattini, "Design of classical-quantum systems with UML," Computing, 104, 2375–2403, 2022.
