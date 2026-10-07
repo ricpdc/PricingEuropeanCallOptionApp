@@ -1,3 +1,20 @@
+# Portions of this file are adapted from the Qiskit Finance
+# "Pricing European Call Options" tutorial.
+#
+# Original Qiskit material:
+# Copyright 2017 IBM and its contributors.
+# Licensed under the Apache License, Version 2.0.
+#
+# Modified and integrated into PricingEuropeanCallOptionApp by
+# Ricardo Pérez-Castillo and contributors.
+#
+# Modifications include its integration into the architecture of a
+# hybrid classical-quantum application and adaptation to the application's
+# domain and execution model.
+#
+# See LICENSE and THIRD_PARTY_NOTICES.md for details.
+
+
 from qiskit import QuantumCircuit
 import time
 
